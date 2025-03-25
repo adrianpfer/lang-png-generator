@@ -35,10 +35,10 @@ const generateAndSavePNG = async (page, htmlContent, outputPath, viewportWidth, 
 
         const htmlTemplate = fs.readFileSync('html/index.html', 'utf-8');
         const cssContent = fs.readFileSync('css/styles.css', 'utf-8');
-        let htmlWithCSS = htmlTemplate.replace('<link rel="stylesheet" href="css/styles.css">', `<style>${cssContent}</style>`);
+        let htmlWithCSS = htmlTemplate.replace(/<link\s+rel="stylesheet"\s+href="css\/styles\.css"\s*\/?>/i,`<style>${cssContent}</style>`);
         htmlWithCSS = htmlWithCSS.replace(/<!--[\s\S]*?-->/g, '');
 
-        const workbook = XLSX.readFile('i18n/ramadan.xlsx');
+        const workbook = XLSX.readFile('i18n/hora_planeta_2025.xlsx');
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         const data = XLSX.utils.sheet_to_json(sheet);
 
@@ -55,7 +55,10 @@ const generateAndSavePNG = async (page, htmlContent, outputPath, viewportWidth, 
             let htmlContent = htmlWithCSS;
             const placeholders = {
                 '{T1}': row.T1 || '',
-                '{T2}': row.T2 || ''
+                '{T2}': row.T2 || '',
+                '{T3}': row.T3 || '',
+                '{T4}': row.T4 || '',
+                '{T5}': row.T5 || '',
             };
 
             for (const [key, value] of Object.entries(placeholders)) {
