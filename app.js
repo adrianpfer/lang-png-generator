@@ -74,6 +74,11 @@ const generateAndSavePNG = async (
 		for (const lang of languageKeys) {
 			const langData = translations.map((row) => row[headers.indexOf(lang)]);
 
+			if (!langData.some((text) => text && text.trim())) {
+				console.log(`⚠️ No se generó PNG para el idioma ${lang}`);
+				continue;
+			}
+
 			let htmlContent = htmlWithCSS;
 			const placeholders = {
 				'{T1}': langData[0] || '',
