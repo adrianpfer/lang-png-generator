@@ -58,7 +58,7 @@ const generateAndSavePNG = async (
 		);
 		htmlWithCSS = htmlWithCSS.replace(/<!--[\s\S]*?-->/g, '');
 
-		const workbook = XLSX.readFile('i18n/hora_planeta_2025_CMS.xlsx');
+		const workbook = XLSX.readFile('i18n/golden_week_2025.xlsx');
 		const sheet = workbook.Sheets[workbook.SheetNames[0]];
 		const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 

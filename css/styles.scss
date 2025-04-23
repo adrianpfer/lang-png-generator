@@ -1,80 +1,107 @@
 @font-face {
-    font-family: 'ZH-Sans';
-    src: url('https://static.zarahome.net/8/static4/itxwebstandard/fuentes/main/fonts/ZaraAPPSans-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap;
+  font-family: "DistinctStyleSansLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://static.zarahome.net/8/static4/itxwebstandard/fuentes/main/fonts/DistinctStyleSansLight.woff2")
+    format("woff2");
 }
 
 @font-face {
-    font-family: 'ZaraAPPSans-SemiBold';
-    src: url('https://static.zarahome.net/8/static4/itxwebstandard/fuentes/main/fonts/ZaraAPPSans-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap;
+  font-family: "DistinctStyleSansBold";
+  font-style: normal;
+  font-weight: 900;
+  src: url("https://static.zarahome.net/8/static4/itxwebstandard/fuentes/main/fonts/DistinctStyleSansBold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "DistinctStyleScriptAlt";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://static.zarahome.net/8/static4/itxwebstandard/fuentes/main/fonts/DistinctStyleScriptAlt.woff2")
+    format("woff2");
+}
+
+html {
+  font-size: 15px;
 }
 
 body {
-    font-size: 62.5%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-    background-color: transparent !important;
+  background-color: transparent !important;
+
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
 }
 
 .text-group {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: "ZH-Sans";
+  font-weight: 300;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  * {
+    line-height: 1;
+    margin: 0;
+    text-align: center;
     width: 100%;
-    height: 100%;
-    color: #fff;
-    font-family: 'ZH-Sans';
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .title,
-    .subtitle,
-    .text {
-        width: 100%;
-        text-align: center;
-        line-height: 1;
+  }
+  .block-1 {
+    .text-1 {
+      font-family: "DistinctStyleSansBold";
+      font-size: 2.7rem;
+      margin-bottom: 1.5rem;
     }
-    .block-1 {
-        .title {
-            font-family: 'ZaraAPPSans-SemiBold';
-            font-size: 4rem;
-            margin: 0 10px;
-        }
-        .subtitle {
-            font-size: 3rem;
-        }
+    .text-2 {
+      font-family: "DistinctStyleSansBold";
+      font-size: 7rem;
     }
-    .block-2 {
-        margin-top: 5rem;
-        .text {
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
+  }
+  .block-2 {
+    margin-top: 2rem;
+    .text-3,
+    .text-4 {
+      font-family: "DistinctStyleSansLight";
+      font-size: 1.9rem;
     }
+    .text-3 {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 body.portrait {
-    & .text-group {
-        .block-1 {
-            .title {
-                font-size: 8rem;
-            }
-            .subtitle {
-                font-size: 6rem;
-            }
-        }
-        .block-2 {
-            margin-top: 3rem;
-            .text {
-                font-size: 4rem;
-            }
-        }
+  & .text-group {
+    .block-1 {
+      .text-1 {
+        font-family: "DistinctStyleSansBold";
+        font-size: 5.4rem;
+        margin-bottom: 3rem;
+      }
+      .text-2 {
+        font-family: "DistinctStyleSansBold";
+        font-size: 10rem;
+      }
     }
+    .block-2 {
+      margin-top: 4rem;
+      .text-3,
+      .text-4 {
+        font-family: "DistinctStyleSansLight";
+        font-size: 3.8rem;
+      }
+      .text-3 {
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }
